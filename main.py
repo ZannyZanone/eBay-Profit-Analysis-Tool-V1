@@ -20,7 +20,7 @@ def averageSold(website):
                     priceText = priceText.replace(",", "")
                     soldPrices.append(float(priceText[1:]))
         if len(soldPrices) == 0:
-            return "No Sold Listings Found"
+            return 0
         else:
             avgSold = round(sum(soldPrices)/len(soldPrices), 2)
             return avgSold
@@ -77,7 +77,7 @@ def costTotals():
 
 
 
-def main():
+def manifestReader():
 
     """reads and opens all csv files invloved"""
     manifest = open('manifest.csv', 'r')
@@ -134,5 +134,8 @@ def main():
     print("Gross Pofit:", grossProfit)
     print("Net Profit:", grossProfit - totalCost)
 
-        
-main()
+
+#Profit Analysis Part II
+
+"""This addition to this project adds to the prexisting ability of the project that can read manifests and give out estimated gross porifts
+with it instead searching through a store on Liquidation.com's website and estimated the margins to each given listing"""
